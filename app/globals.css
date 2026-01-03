@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+html {
+  scroll-padding-top: 5rem;
+  /* ~80px for sticky header */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  /* Industrial / Clean Palette */
+  --background: #ffffff;
+  --foreground: #111827;
+  /* Zinc 900 */
+  --primary: #f97316;
+  /* Orange 500 - Muted Accent */
+  --muted: #6b7280;
+  /* Zinc 500 */
+  --font-inter: 'Inter', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b;
+    /* Zinc 950 */
+    --foreground: #f4f4f5;
+    /* Zinc 100 */
+    --primary: #fb923c;
+    /* Orange 400 */
+    --muted: #a1a1aa;
+    /* Zinc 400 */
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for industrial feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
