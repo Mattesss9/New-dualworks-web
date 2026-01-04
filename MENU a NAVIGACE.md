@@ -1,346 +1,136 @@
-DualWorks – Uzamčení menu, navigace a designové logiky
+﻿# Finální MENU a navigace – DualWorks
 
-1️⃣ Základní princip (KRITICKÉ)
+Cíl navigace:
+- jasně vést B2B zákazníka k nezávazné konzultaci
+- vysvětlit model kapacitní subdodávky (ne personální agentura)
+- udržet jednoduchou a čitelnou strukturu
+- fungovat konzistentně na desktopu i mobilu
 
-Menu není mapa webu.
-Menu je rozhodovací filtr.
+---
 
-Do menu patří:
+## 1) Primární navigace (header)
 
-stabilní informace
+Pořadí položek (zleva doprava):
 
-vysvětlení modelu spolupráce
+1. Domů  
+   - URL: `/`
 
-budování důvěry
+2. Jak spolupracujeme  
+   - URL: `/jak-spolupracujeme`  
+   - účel: vysvětlení modelu kapacitní subdodávky, procesu a principů spolupráce
 
-Do menu NEPATŘÍ:
+3. Krizový scénář  
+   - URL: `/krizovy-scenar`  
+   - účel: řešení situací, kdy je tlak na termíny a je nutná rychlá stabilizace
 
-scénáře (krizový / plánovaný)
+4. Plánovaný scénář  
+   - URL: `/planovany-scenar`  
+   - účel: dlouhodobé kapacitní zajištění projektů bez náboru
 
-vstupní landing pages
+5. O nás / Zázemí  
+   - URL: `/o-nas`  
+   - účel: důvěryhodnost, zkušenosti, zázemí, pojištění, kvalifikace
 
-„řešení problémů“
+6. Kontakt  
+   - URL: `/kontakt`  
+   - alternativně: scroll na `/#kontakt` (pokud je formulář inline)
 
-Menu nesmí reagovat na marketing, ale na rozhodovací proces B2B zákazníka.
+---
 
-2️⃣ FINÁLNÍ STRUKTURA HLAVNÍHO MENU (UZAMČENO)
-✅ Hlavní menu (desktop)
+## 2) Hlavní CTA v headeru
 
-Jak spolupracujeme
+Samostatné tlačítko vpravo v navigaci:
 
-O nás / Zázemí
+- Text: **Domluvit konzultaci**
+- Chování:
+  - na homepage: scroll na sekci `#kontakt` + fokus formuláře
+  - na ostatních stránkách: přechod na `/kontakt#konzultace`
+- CTA je viditelné:
+  - na desktopu vždy
+  - na mobilu v menu + ideálně sticky po scrollu
 
-Kontakt
+---
 
-📌 Homepage v menu není
-– logo vždy vede na homepage.
+## 3) Top info bar (doporučeno)
 
-Proč právě tyto položky
-🔹 Jak spolupracujeme ← KLÍČOVÁ POLOŽKA
+Tenký informační pruh nad hlavním menu.
 
-centrální pravda o modelu spolupráce
+Obsah:
+- Telefon (klikatelné `tel:`)
+- E-mail (klikatelné `mailto:`)
+- Pracovní doba (např. Po–Pá 8:00–17:00)
 
-proces
+Chování:
+- na desktopu plný obsah
+- na mobilu zkráceno (ikony / skryto po scrollu)
 
-odpovědnost
+---
 
-kapacitní subdodávka ≠ personální agentura
+## 4) Dropdown / vnitřní navigace (Jak spolupracujeme)
 
-👉 Tuto stránku:
+Na desktopu může být dropdown, na mobilu accordion.
 
-čte nákup celou
+Položky (anchor odkazy):
 
-PM posílá kolegům
+- Model spolupráce  
+  - `/jak-spolupracujeme#model-spoluprace`
 
-vedení schvaluje
+- Kdy nás firmy zapojují  
+  - `/jak-spolupracujeme#kdy-nas-zapojuji`
 
-Je to páteř webu.
+- Krátkodobé a dlouhodobé zapojení  
+  - `/jak-spolupracujeme#kratkodobe-a-dlouhodobe`
 
-🔹 O nás / Zázemí
+- Jak spolupráce funguje v praxi  
+  - `/jak-spolupracujeme#proces`
 
-buduje důvěru
+- Nezávazná konzultace  
+  - `/jak-spolupracujeme#konzultace`
 
-ukazuje průmyslové prostředí
+---
 
-pojištění odpovědnosti
+## 5) Mobilní navigace
 
-regulované provozy (včetně energetiky / jaderných provozů)
+Chování:
+- hamburger menu
+- slide-over panel (z pravé strany)
+- žádný full-page overlay
 
-➡️ Krátká, klidná, podpůrná stránka.
+Struktura mobilního menu:
 
-🔹 Kontakt
-
-vede na:
-
-stránku s inline formulářem
-nebo
-
-scroll na formulář (pokud je globální)
-
-❗ Žádné jiné CTA v menu.
-
-3️⃣ CO V MENU ZÁMĚRNĚ NENÍ (A PROČ)
-
-❌ Kapacitní podpora při tlaku na termíny
-❌ Dlouhodobé kapacitní zajištění
-
-➡️ Tyto stránky jsou:
-
-scénářové vstupy
-
-nejsou stabilní obsah
-
-Mají fungovat:
-
-z homepage
-
-z CTA
-
-z odkazu v textu
-
-z Google
-
-👉 Nikdy ne z menu.
-
-4️⃣ NAVIGAČNÍ LOGIKA (TOK UŽIVATELE)
-🧭 Typické cesty návštěvníka
-Varianta A – návštěvník přijde na homepage
-
-Homepage
-→ Krizový / Plánovaný scénář
-→ Jak spolupracujeme
-→ O nás / Zázemí
-→ Kontakt
-
-Varianta B – návštěvník přijde z Google (scénář)
-
-Krizový / Plánovaný scénář
-→ Jak spolupracujeme
-→ Kontakt
-
-Varianta C – návštěvník přijde z doporučení
-
-Jak spolupracujeme
-→ O nás / Zázemí
-→ Kontakt
-
-📌 Všechno vede do „Jak spolupracujeme“.
-To je páteř webu.
-
-5️⃣ MOBILE MENU (JEŠTĚ DŮLEŽITĚJŠÍ)
-
-Na mobilu:
-
-☰ Menu
-
-Jak spolupracujeme
-
-O nás / Zázemí
-
-Kontakt
-
-Pravidla:
-
-žádné podmenu
-
-žádné rozbalování
-
-max. 3 položky
-
-➡️ Rychlé rozhodnutí, žádné přemýšlení.
-
-6️⃣ CTA LOGIKA (UZAMČENA)
-
-všude stejné CTA:
-Domluvit konzultaci
-
-všude stejný formulář
-
-žádné landing-page–specifické varianty
-
-➡️ Konzistence = důvěra.
-
-7️⃣ OFICIÁLNÍ STAV
-
-🔒 Menu a navigace jsou UZAMČENY.
-
-Od této chvíle:
-
-❌ nepřidáváme položky
-
-❌ nehrajeme si s menu
-
-❌ neměníme strukturu
-
-➡️ Toto je manažerské rozhodnutí, ne grafické.
-
-🎨 DESIGN STRATEGIE PRO DUALWORKS
-1️⃣ Základní princip (NEJDŮLEŽITĚJŠÍ VĚTA)
-
-Design má působit klidně, technicky a profesionálně.
-Nesmí působit prodejně, dynamicky ani „HR“.
-
-Pokud by si technický ředitel řekl:
-
-„Tohle vypadá jako normální průmyslový subdodavatel.“
-
-➡️ Vyhráli jsme.
-
-2️⃣ HERO SEKCE – JAK MÁ FUNGOVAT (KRITICKÉ)
-
-🎥 HERO = VIDEO
-
-Úloha videa:
-
-vytvořit kontext prostředí
-
-ukázat průmysl, provoz, realitu
-
-ne vyprávět příběh
-
-Pravidla pro HERO video
-
-bez zvuku
-
-žádný rychlý střih
-
-žádné efekty
-
-spíš:
-
-provoz
-
-montáž
-
-celek
-
-rytmus práce
-
-Text v HERO (STRIKTNÍ PRAVIDLA)
-
-H1
-
-max. 2 řádky
-
-žádná metafora
-
-žádné emoce
-
-✔ správně:
-
-Kapacitní subdodávka pro průmyslové projekty
-
-Kapacitní podpora při tlaku na termíny
-
-❌ špatně:
-
-Pomáháme vám růst
-
-Jsme partner pro vaše projekty
-
-Podnadpis
-
-1 krátká věta
-
-vysvětluje kdy a jak
-
-✔ správně:
-Když harmonogram neodpovídá kapacitám, vstupujeme do projektu jako kapacitní subdodávka.
-
-CTA v HERO
-
-jedno jediné
-
-decentní
-
-✔ Domluvit konzultaci
-
-3️⃣ RYTMUS STRÁNKY (KLID A ČITELNOST)
-
-Stránka musí „dýchat“.
-
-Doporučený rytmus:
-HERO
-↓
-Krátký vysvětlující blok
-↓
-Oddělovací sekce (světlé pozadí)
-↓
-Scénáře / odkazy dál
-↓
-Jak spolupracujeme (výcuc)
-↓
-CTA
-
-❗ Nikdy:
-
-nedávat 3 textové bloky bez pauzy
-
-nevytvářet „stěnu textu“
-
-4️⃣ BARVY, TYPOGRAFIE, STYL
-🎨 Barvy
-
-tmavé / neutrální
-
-vysoký kontrast pro čitelnost
-
-žádné:
-
-křiklavé akcenty
-
-gradienty
-
-„tech-blue“ efekty
-
-Doporučení:
-
-tmavě šedá / antracit
-
-bílá
-
-jeden tlumený akcent (oranžová / ocelová)
-
-🔤 Typografie
-
-bezpatkové písmo
-
-průmyslový charakter
-
-čitelnost > styl
-
-Doporučení:
-
-Inter
-
-IBM Plex Sans
-
-Source Sans
-
-❌ Nepoužívat:
-
-ultratenké řezy
-
-„designérská“ písma
-
-5️⃣ CO DESIGN NESMÍ DĚLAT (KRITICKÉ)
-
-❌ fotobankové ilustrace lidí s helmami
-❌ ikonky typu hodiny / checklisty
-❌ timeline „krok 1–2–3“
-❌ animované countery („+200 projektů“)
-
-➡️ To vše snižuje důvěru v průmyslovém prostředí.
-
-🔒 ZÁVĚR
-
-Tento dokument je:
-
-závazný
-
-uzamčený
-
-nadřazený designu
-
-Pokud vznikne konflikt:
-👉 VŽDY vyhrává tento dokument.
+- Domů
+- Jak spolupracujeme
+  - Model spolupráce
+  - Kdy nás firmy zapojují
+  - Krátkodobé a dlouhodobé zapojení
+  - Proces v praxi
+- Krizový scénář
+- Plánovaný scénář
+- O nás / Zázemí
+- Kontakt
+
+CTA:
+- výrazné tlačítko **Domluvit konzultaci** (nahoře nebo dole menu)
+
+---
+
+## 6) Aktivní stavy a UX
+
+- aktivní stránka v menu vizuálně zvýrazněná
+- CTA má jednotný styl na celém webu
+- žádná položka nesmí vést na prázdnou stránku
+
+---
+
+## 7) Footer navigace (zkrácená)
+
+- Domů
+- Jak spolupracujeme
+- Krizový scénář
+- Plánovaný scénář
+- O nás / Zázemí
+- Kontakt
+
+Právní odkazy:
+- Ochrana osobních údajů
+- Podmínky užití
