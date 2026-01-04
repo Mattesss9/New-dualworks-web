@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className="scroll-smooth">
-      <body className={`${inter.variable} antialiased flex flex-col min-h-screen`}>
+      <body className={`${inter.variable} antialiased flex flex-col min-h-screen bg-white dark:bg-zinc-950 text-foreground`}>
         <Navbar />
         <main className="flex-1">
           {children}

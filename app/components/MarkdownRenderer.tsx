@@ -6,6 +6,7 @@ interface MarkdownRendererProps {
     content: string;
     className?: string;
     contactForm?: React.ReactNode;
+    heroMedia?: React.ReactNode;
 }
 
 type Section = {
@@ -13,21 +14,27 @@ type Section = {
     blocks: ContentBlock[];
 };
 
-export default function MarkdownRenderer({ content, className = '', contactForm }: MarkdownRendererProps) {
+export default function MarkdownRenderer({ content, className = '', contactForm, heroMedia }: MarkdownRendererProps) {
     const blocks = parseMarkdown(content);
     const { hero, sections } = buildSections(blocks);
 
     return (
         <article className={`flex flex-col ${className}`}>
             {hero.length > 0 && (
-                <section className="bg-white dark:bg-zinc-950 text-foreground">
-                    <div className="container mx-auto px-4 max-w-5xl py-16 md:py-24 space-y-8 border-b border-zinc-200 dark:border-zinc-800">
+                <section className="relative isolate overflow-hidden bg-black text-white">
+                    <div className="absolute inset-0 -z-20">
+                        {heroMedia}
+                    </div>
+                    <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/80 via-black/60 to-black/70" />
+                    <div className="absolute inset-0 -z-5 bg-black/25 backdrop-brightness-90" />
+
+                    <div className="container mx-auto px-4 max-w-5xl py-20 md:py-28 min-h-[70vh] md:min-h-[75vh] flex flex-col items-center justify-center text-center gap-6 relative z-10">
                         {hero.map((block, idx) => renderBlock(block, `hero-${idx}`, true))}
-                        <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                            <Link href="#kontakt" className="inline-flex items-center justify-center rounded-md bg-foreground text-background px-5 py-3 text-sm font-semibold hover:opacity-90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-zinc-950">
+                        <div className="flex flex-col sm:flex-row gap-3 pt-2 justify-center">
+                            <Link href="#kontakt" className="inline-flex items-center justify-center rounded-md bg-primary text-white px-7 py-3 text-sm font-semibold shadow-lg shadow-primary/30 hover:opacity-90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/80 dark:focus:ring-offset-black">
                                 Domluvit konzultaci
                             </Link>
-                            <Link href="#co-dodavame" className="inline-flex items-center justify-center rounded-md border border-zinc-300 dark:border-zinc-700 px-5 py-3 text-sm font-semibold text-foreground hover:border-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-zinc-950">
+                            <Link href="#co-dodavame" className="inline-flex items-center justify-center rounded-md border border-white/70 px-7 py-3 text-sm font-semibold text-white bg-white/5 hover:bg-white/10 hover:border-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/80 dark:focus:ring-offset-black">
                                 Co dodáváme
                             </Link>
                         </div>
@@ -192,21 +199,21 @@ function renderBlock(block: ContentBlock, key: string, isHero: boolean) {
     switch (block.type) {
         case 'h1':
             return (
-                <h1 key={key} className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.05] max-w-4xl">
+                <h1 key={key} className={`text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl leading-[1.05] max-w-4xl ${isHero ? 'text-white drop-shadow-xl mx-auto' : 'text-foreground'}`}>
                     {renderInline(block.content)}
                 </h1>
             );
         case 'h2': {
             const id = getHeadingId(block.content);
             return (
-                <h2 key={key} id={id} className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground leading-tight max-w-4xl mb-4">
+                <h2 key={key} id={id} className={`text-3xl md:text-4xl font-semibold tracking-tight leading-tight max-w-4xl mb-4 ${isHero ? 'text-white mx-auto' : 'text-foreground'}`}>
                     {renderInline(block.content)}
                 </h2>
             );
         }
         case 'h3':
             return (
-                <h3 key={key} className="text-xs md:text-sm font-semibold uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400 mt-2 mb-1">
+                <h3 key={key} className={`text-xs md:text-sm font-semibold uppercase tracking-[0.14em] mt-2 mb-1 ${isHero ? 'text-white/80' : 'text-zinc-500 dark:text-zinc-400'}`}>
                     {renderInline(block.content)}
                 </h3>
             );
@@ -214,7 +221,7 @@ function renderBlock(block: ContentBlock, key: string, isHero: boolean) {
             return (
                 <p
                     key={key}
-                    className={`${isHero ? 'text-lg md:text-xl leading-8 text-zinc-600 dark:text-zinc-300 max-w-4xl' : 'text-base md:text-lg leading-7 text-zinc-700 dark:text-zinc-300 max-w-3xl'}`}
+                    className={`${isHero ? 'text-lg md:text-xl leading-8 text-white/85 max-w-3xl mx-auto' : 'text-base md:text-lg leading-7 text-zinc-700 dark:text-zinc-300 max-w-3xl'}`}
                 >
                     {renderInline(block.content)}
                 </p>

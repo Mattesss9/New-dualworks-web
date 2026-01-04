@@ -5,8 +5,8 @@ import ContactForm from '../components/ContactForm';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Jak spolupracujeme – DualWorks',
-    description: 'Vysvětlení projektového režimu spolupráce: kapacitní subdodávka, ucelené týmy, svěřený rozsah prací, smluvní rámec a řízení zapojení kapacit.',
+    title: 'Jak spolupracujeme | DualWorks',
+    description: 'Projektový režim spolupráce: kapacitní subdodávka, ucelené týmy, svěřený rozsah prací, smluvní rámec a řízení zapojení kapacit.',
 };
 
 async function getData() {
@@ -20,10 +20,10 @@ export default async function JakSpolupracujeme() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <div className="container mx-auto px-4 py-12 max-w-4xl">
-                <MarkdownRenderer content={content} />
-            </div>
-            <ContactForm />
+            <MarkdownRenderer
+                content={content}
+                contactForm={<ContactForm variant="embedded" title="Nezávazná konzultace projektu" />}
+            />
         </div>
     );
 }

@@ -20,10 +20,10 @@ export default async function ONas() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <div className="container mx-auto px-4 py-12 max-w-4xl">
-                <MarkdownRenderer content={content} />
-            </div>
-            <ContactForm />
+            <MarkdownRenderer
+                content={content}
+                contactForm={<ContactForm variant="embedded" title="Nezávazná konzultace projektu" />}
+            />
         </div>
     );
 }

@@ -1,6 +1,5 @@
 H1
 Dlouhodobé kapacitní zajištění průmyslových projektů
-Úvodní odstavec (lead – bez H2)
 
 U rozsáhlých průmyslových projektů je klíčové mít dlouhodobě zajištěné stabilní kapacity bez nutnosti vlastního náboru. Interní týmy často nepokrývají celý rozsah realizace nebo by jejich rozšiřování přineslo zbytečná personální a organizační rizika.
 
@@ -85,6 +84,3 @@ Nezávazná konzultace projektu
 Pokud plánujete průmyslový projekt s potřebou dlouhodobého kapacitního zajištění, nabízíme nezávaznou konzultaci. Společně projdeme harmonogram, očekávaný vývoj prací a možnosti zapojení našich kapacit.
 
 Cílem konzultace není obchodní nabídka, ale posouzení, zda a jak může dlouhodobá kapacitní spolupráce v rámci projektu dávat smysl.
-
-👉 Inline kontaktní formulář
-(se stejnou strukturou jako na ostatních stránkách)

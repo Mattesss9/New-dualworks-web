@@ -2,6 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import MarkdownRenderer from './components/MarkdownRenderer';
 import ContactForm from './components/ContactForm';
+import HeroVideo from './components/HeroVideo';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -22,6 +23,7 @@ export default async function Home() {
     <div className="flex flex-col min-h-screen">
       <MarkdownRenderer
         content={content}
+        heroMedia={<HeroVideo className="absolute inset-0" src="/hero-video.mp4" poster="/logo-full.png" />}
         contactForm={<ContactForm variant="embedded" title="Nezávazná konzultace projektu" />}
       />
     </div>

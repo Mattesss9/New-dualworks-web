@@ -1,9 +1,5 @@
-👉 Kapacitní podpora při tlaku na termíny
-Bez přepisování významu, jen správné úrovně a logika.
-
 H1
 Kapacitní podpora při tlaku na termíny v průmyslových projektech
-Úvodní odstavec (lead – není H2)
 
 Když harmonogram neodpovídá dostupným kapacitám, vzniká tlak na termíny a riziko zpoždění projektu. Změny návazností, souběh zakázek nebo rozšíření rozsahu prací často nelze řešit pouze interními zdroji bez negativního dopadu na řízení projektu.
 
